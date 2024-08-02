@@ -1,0 +1,272 @@
+html,
+body {
+  height: 100%;
+  overflow:hidden;
+}
+
+body {
+  background: url(../images/temp.jpg) center/cover no-repeat;
+  margin: 0;
+  justify-content: center;
+  font-family: Verdana, sans-serif;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  z-index: 9999;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -60px;
+  margin-left: -60px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+body {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+body.loaded #page-content {
+  opacity: 1;
+}
+
+body.loading {
+  overflow: hidden;
+}
+
+body.loading #loading-screen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body.loading .loader {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body.loaded #loading-screen {
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.loaded .loader {
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+
+#timedate {
+  font: small-caps lighter 43px/150% "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  text-align:right;
+  width: 100%;
+  margin: 40px auto;
+  color: #000;
+  padding: 20px;
+}
+/* FOR ANNOUUNCEMENT */
+.scroll-left {
+ height: 50px;
+ overflow: hidden;
+ position: relative;
+ background:#2596be;
+ color: white;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.scroll-left p {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ line-height: 50px;
+ text-align: center;
+ font-size: 25px;
+ transform:translateX(100%);
+ animation: scroll-left 20s linear infinite;
+}
+@keyframes scroll-left {
+ 0%   {
+ transform: translateX(100%);
+ }
+ 100% {
+ transform: translateX(-100%);
+ }
+}
+
+.modal-header {
+  background-color: #2596be;
+}
+.btn-sq-lg {
+  width: 220px !important;
+  height: 200px !important;
+  border-radius: 25px;
+}
+#btn-sq-lg{
+  border-radius: 25px;
+  color:#2596be;
+}
+.fa-6x{
+  padding-top:35px;
+}
+#clock{
+  color:black;
+}
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin-left: 450px;
+  background: rgba(224, 225, 228, 0.5);
+  -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+  border-radius: 15px;
+}
+#box {
+  position: relative;
+}
+
+#icon {
+  padding: 10px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+}
+#titlepos {
+  position:absolute;
+  font-size:25px;
+  top:-60px;
+  }
+.scrollbar {
+position: relative;
+height: 300px;
+overflow: auto;
+}
+.table-wrapper-scroll-y {
+display: block;
+}
+table {
+  table-layout:fixed;
+}
+table tr {
+  height:1em;
+}
+td {
+  overflow:hidden;
+  white-space:nowrap;
+}
+.selected {
+  background-color: #2596be;
+  color: #FFF;
+}
+
+#textOP{
+  opacity: 0.7;
+  text-align:center;
+}
+
+#username{
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 250px;
+  font-size:20px;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.fullclick {
+  margin: 1em 0;
+  padding: 0;
+
+  color: white;
+}
+.fullclick li {
+  list-style: none;
+  margin: 1em 0;
+  padding: 20px 10px;
+  background: #2b2b2b;
+  position: relative;
+  transition: 400ms;
+  width:100%;
+}
+.fullclick li a.main::after {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  content: ' ';
+}
+.fullclick li:hover, .fullclick li:focus-within {
+  background:#484848;
+  box-shadow: 0px 3px 6px #000;
+}
+.wrapper {
+    text-align: center;
+}
+.wrapper ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+.wrapper li {
+    float: left;
+    padding: 2px 5px;
+    border: 1px solid black;
+}
